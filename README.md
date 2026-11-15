@@ -29,12 +29,12 @@ Three questions:
 
 ## My role
 
-Engineering inputs (packing method, vessel dimensions, what a BOM should contain) came from the project engineer. **I did the data work:** collecting the SAP exports, labour log and vendor rates, cleaning them, building the costing model, the analysis and the dashboard.
+This is a public rebuild of a study I did at work. There, the engineering inputs (packing method, vessel dimensions, what a BOM should contain) came from engineering, and I collected the data and built the costing model. In this repo all the data is simulated, so the figures are illustrative, not company figures.
 
 ## How I worked through it (DMAIC)
 
 1. **Define** - no standard BOM for most sizes, so packing cost per vessel was unknown. The three questions above.
-2. **Measure** - collected SAP goods-issue exports, a packing labour log, vendor rates and three packer quotes (`Data -` tabs, pasted as values). Cleaned them with helper columns next to the raw data: corrected job numbers, fixed text dates, filled one missing labour day, converted units, removed GST, and mapped **27 vendor item names to 13 items**.
+2. **Measure** - simulated SAP goods-issue exports, a packing labour log, vendor rates and three packer quotes (`Data -` tabs, pasted as values). Cleaned them with helper columns next to the raw data: corrected job numbers, fixed text dates, filled one missing labour day, converted units, removed GST, and mapped **27 vendor item names to 13 items**.
 3. **Analyse** - costed every job: material from stores issues, labour from the log (average hours per vessel for jobs before the log existed), overtime at double rate, fumigation and supervision. Compared actual use with the one written BOM, and compared four options per size: in-house, contractor labour only, buying ready-made skids, and a turnkey packer.
 4. **Improve** - average use per vessel by size became the draft standard BOM (**35 timber lines for 6 sizes**), checked against the one written BOM.
 5. **Control** - once the BOMs are released, stores issues can be checked against them on every job. The dashboard (vessel size and vessels per shipment) makes that check quick.
@@ -88,3 +88,7 @@ Open `Export_Packing_Cost_Case_Study.xlsx` in Excel and change the two blue cell
 - `proposed_standard.png`: the proposed-standard sheet
 
 *Next step: a Power BI version of the dashboard from the same data.*
+
+## How this was made
+
+This is a public rebuild of a study I did at work. I set the scope, brought the method and the business knowledge from that study, and reviewed the results. The simulated data, the workbook formulas and the first draft of this write-up were done with an AI assistant (Claude).
